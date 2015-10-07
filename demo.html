@@ -7,34 +7,6 @@
 		<link rel="stylesheet" href="modal/modal-skin.css" />
 	</head>
 	<body>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/mithril/0.1.22/mithril.js"></script>
-		<script src="modal/modal.js"></script>
-		<script>
-//top level
-var demo = {
-	controller: function() {
-		this.modal = submodule(Modal)
-	},
-	view: function(ctrl) {
-		return [
-			m("button[type=button]", {onclick: Modal.module.bind(this, inner)}, "Click to show modal"),
-			ctrl.modal({class: "modal-animation-8"})
-		]
-	}
-}
-
-//to be rendered in the modal
-var inner = {
-	controller: function() {},
-	view: function() {
-		return [
-			m("h1", "Hello world")
-		]
-	}
-}
-
-
-m.module(document.body, demo)
-		</script>
+		<script src="./bundle.js"></script>
 	</body>
 </html>
