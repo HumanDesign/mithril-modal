@@ -14,16 +14,16 @@
 	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }*/
-
+/*
 .modal-dialog {
 	position: relative;
-}
+}*/
 
-.modal-visible {
+/*.modal-visible {
 	visibility: visible;
-}
+}*/
 
-.modal-overlay {
+/*.modal-overlay {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -32,9 +32,9 @@
 	left: 0;
 	z-index: 9;
 	opacity: 0;
-}
+}*/
 
-.modal-close {
+/*.modal-close {
 	color: inherit;
 	font-size: 1.6em;
 	font-weight: bold;
@@ -42,7 +42,7 @@
 	position: absolute;
 	text-decoration: none;
 	top: 5px;
-}
+}*/
 
 .modal-visible ~ .modal-overlay {
 	opacity: 1;
