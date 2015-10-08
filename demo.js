@@ -1,7 +1,7 @@
 var m = require('mithril');
 var modal = require('./modal/modal.js');
 
-//top level
+// top level
 var demo = {
     view: function(ctrl) {
         return [
@@ -11,20 +11,22 @@ var demo = {
                 }
             }, "Click to show modal"),
             m.component(modal, {
-                view: inner.view,
-                class: 'modal-animation-8'
+                innerComponent: m.component(inner),
+                class: 'modal-animation-8',
+                // close: '✘',
+                // close: '×',
+                // close: 'x'
             })
         ]
     }
 }
 
-//to be rendered in the modal
+// inner component; to be rendered in the modal
 var inner = {
     controller: function() {},
     view: function() {
-        return [
-            m("h1", "Hello world")
-        ]
+        return m('.div',
+        m("h1", "Helo world"))
     }
 }
 

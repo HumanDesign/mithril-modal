@@ -2,7 +2,7 @@
   "name": "mithril-modal",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "modal/modal.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack demo.js --output-file bundle.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HumanDesign/mithril-modal.git"
+    "url": "git+https://github.com/llambda/mithril-modal.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HumanDesign/mithril-modal/issues"
+    "url": "https://github.com/llambda/mithril-modal/issues"
   },
-  "homepage": "https://github.com/HumanDesign/mithril-modal#readme",
+  "homepage": "https://github.com/llambda/mithril-modal#readme",
   "dependencies": {
     "mithril": "^0.2.0",
     "webpack": "^1.12.2"

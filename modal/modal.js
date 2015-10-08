@@ -48,8 +48,8 @@ module.exports.view = function(ctrl, args, extras) {
                     style: {
                         cursor: 'pointer'
                     }
-                }, "X"),
-                args.view ? args.view() : ''
+                }, args.close ? args.close : '×'),
+                args.innerComponent ? args.innerComponent : ''
             ])
         ]),
         m(".modal-overlay")
