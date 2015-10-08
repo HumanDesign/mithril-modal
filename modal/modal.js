@@ -1,5 +1,7 @@
 var m = require('mithril');
 var visible = m.prop(false);
+var style = require('./style');
+var assign = require('lodash.assign');
 
 module.exports.show = function() {
     visible(true);
@@ -40,7 +42,8 @@ module.exports.view = function(ctrl, args, extras) {
                 args.class
             ].join(" "),
             onclick: hide,
-            config: ctrl.config
+            config: ctrl.config,
+            style: assign({}, style.base, visible() ? style.visible : style.hidden)
         }, [
             m(".modal-dialog", [
                 m("a.modal-close", {
