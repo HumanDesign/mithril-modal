@@ -1,56 +1,62 @@
-module.exports.base = {
+'use strict';
+
+var Prefixer = require('inline-style-prefixer');
+// var customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'
+var prefixer = new Prefixer();
+
+var styles = {};
+
+styles.base = {
     position: 'fixed',
 	top: '50%',
 	left: '50%',
-	'min-width': '320px',
+	minWidth: '320px',
 	height: 'auto',
-	'z-index': '10000',
-    '-webkit-transform': 'translateX(-50%) translateY(-50%)',
-    '-moz-transform': 'translateX(-50%) translateY(-50%)',
-	'-ms-transform': 'translateX(-50%) translateY(-50%)',
-	'transform': 'translateX(-50%) translateY(-50%)'
+	zIndex: '10000',
+	transform: 'translateX(-50%) translateY(-50%)'
 }
 
-module.exports.hidden = {
-	visibility: 'hidden',
-	'-webkit-backface-visibility': 'hidden',
-	'-moz-backface-visibility': 'hidden',
-	'backface-visibility': 'hidden'
+styles.hidden = {
+	visibility: 'hidden'
 }
 
-module.exports.visible = {
+styles.visible = {
 	visibility: 'visible',
-	'-webkit-backface-visibility': 'visible',
-	'-moz-backface-visibility': 'visible',
-	'backface-visibility': 'visible'
+    backfaceVisibility: 'visible'
 }
 
-module.exports.close = {
+styles.close = {
     cursor: 'pointer',
     color: 'inherit',
-	'font-size': '1.6em',
-	'font-weight': 'bold',
+	fontSize: '1.6em',
+	fontWeight: 'bold',
 	right: '10px',
 	position: 'absolute',
-	'text-decoration': 'none',
+	textDecoration: 'none',
 	top: '5px'
 }
 
-module.exports.dialog = {
+styles.dialog = {
     position: 'relative',
     background: 'silver',
-    'min-height': '400px',
-    'padding': '10px',
+    minHeight: '400px',
+    padding: '10px',
     width: '400px'
 }
 
-module.exports.overlay = {
+styles.overlay = {
     position: 'fixed',
 	width: '100%',
 	height: '100%',
 	visibility: 'hidden',
 	top: '0',
 	left: '0',
-	'z-index': module.exports.base['z-index'] - 1,
+	zIndex: styles.base['zIndex'] - 1,
 	opacity: '0'
 }
+
+Object.keys(styles).forEach(function (key) {
+    styles[key] = prefixer.prefix(styles[key]);
+})
+
+module.exports = styles;
