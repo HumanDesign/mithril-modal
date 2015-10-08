@@ -24,3 +24,33 @@ module.exports.visible = {
 	'-moz-backface-visibility': 'visible',
 	'backface-visibility': 'visible'
 }
+
+module.exports.close = {
+    cursor: 'pointer',
+    color: 'inherit',
+	'font-size': '1.6em',
+	'font-weight': 'bold',
+	right: '10px',
+	position: 'absolute',
+	'text-decoration': 'none',
+	top: '5px'
+}
+
+module.exports.dialog = {
+    position: 'relative',
+    background: 'silver',
+    'min-height': '400px',
+    'padding': '10px',
+    width: '400px'
+}
+
+module.exports.overlay = {
+    position: 'fixed',
+	width: '100%',
+	height: '100%',
+	visibility: 'hidden',
+	top: '0',
+	left: '0',
+	'z-index': module.exports.base['z-index'] - 1,
+	opacity: '0'
+}

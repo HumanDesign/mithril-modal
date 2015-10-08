@@ -35,6 +35,7 @@ module.exports.controller = function(args, extras) {
 
 module.exports.view = function(ctrl, args, extras) {
     args = args || {}
+    args.style = args.style || {}
     return m('div', [
         m(".modal", {
             class: [
@@ -45,12 +46,12 @@ module.exports.view = function(ctrl, args, extras) {
             config: ctrl.config,
             style: assign({}, style.base, visible() ? style.visible : style.hidden)
         }, [
-            m(".modal-dialog", [
-                m("a.modal-close", {
+            m(".modal-dialog", {
+                style: assign({}, style.dialog, args.style.dialog)
+            }, [
+                m("a", {
                     onclick: hide,
-                    style: {
-                        cursor: 'pointer'
-                    }
+                    style: assign({}, style.close, args.style.close)
                 }, args.close ? args.close : '×'),
                 args.innerComponent ? args.innerComponent : ''
             ])
