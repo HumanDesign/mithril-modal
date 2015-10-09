@@ -56,11 +56,11 @@ module.exports.view = function(ctrl, args, extras) {
             }, [
                 m("a", {
                     onclick: hide,
-                    onmouseover: function () {
+                    onmouseover: function() {
                         this.style.color = 'white'
                     },
-                    onmouseout: function () {
-                        this.style.color =  'black'
+                    onmouseout: function() {
+                        this.style.color = 'black'
                     },
                     style: prefixer.prefix(assignStyles(style.close, args.style.close))
                 }, args.close ? args.close : '×'),
