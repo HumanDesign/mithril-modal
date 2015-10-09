@@ -3,32 +3,32 @@ var styles = {};
 
 styles.base = {
     position: 'fixed',
-	top: '50%',
-	left: '50%',
-	minWidth: '320px',
-	height: 'auto',
-	zIndex: '10000',
-	transform: 'translateX(-50%) translateY(-50%)'
+    top: '50%',
+    left: '50%',
+    minWidth: '320px',
+    height: 'auto',
+    zIndex: '10000',
+    transform: 'translateX(-50%) translateY(-50%)'
 }
 
 styles.hidden = {
-	visibility: 'hidden'
+    visibility: 'hidden'
 }
 
 styles.visible = {
-	visibility: 'visible',
+    visibility: 'visible',
     backfaceVisibility: 'visible'
 }
 
 styles.close = {
     cursor: 'pointer',
     color: 'inherit',
-	fontSize: '1.6em',
-	fontWeight: 'bold',
-	right: '10px',
-	position: 'absolute',
-	textDecoration: 'none',
-	top: '5px'
+    fontSize: '1.6em',
+    fontWeight: 'bold',
+    right: '10px',
+    position: 'absolute',
+    textDecoration: 'none',
+    top: '5px'
 }
 
 styles.dialog = {
@@ -41,13 +41,13 @@ styles.dialog = {
 
 styles.overlay = {
     position: 'fixed',
-	width: '100%',
-	height: '100%',
-	visibility: 'hidden',
-	top: '0',
-	left: '0',
-	zIndex: styles.base['zIndex'] - 1,
-	opacity: '0'
+    width: '100%',
+    height: '100%',
+    visibility: 'hidden',
+    top: '0',
+    left: '0',
+    zIndex: styles.base['zIndex'] - 1,
+    opacity: '0'
 }
 
 module.exports = styles;
