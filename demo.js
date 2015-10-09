@@ -11,9 +11,19 @@ var demo = {
                 }
             }, "Click to show modal"),
             m.component(modal, {
+                // component to render inside the modal:
                 innerComponent: m.component(inner),
+                // animation class:
                 class: 'modal-animation-8',
-                // close: '✘',
+                // styles can be overridden as well
+                style: {
+                    dialog: {
+                        backgroundColor: '#aaffee',
+                        width: '700px'
+                    }
+                },
+                // the close string can be suplied:
+                close: '✘',
                 // close: '×',
                 // close: 'x'
             })
@@ -25,8 +35,8 @@ var demo = {
 var inner = {
     controller: function() {},
     view: function() {
-        return m('.div',
-        m("h1", "Helo world"))
+        return m('div',
+            m("h1", "Hello world"))
     }
 }
 
