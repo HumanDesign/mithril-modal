@@ -52,7 +52,7 @@ module.exports.view = function(ctrl, args, extras) {
             style: prefixer.prefix(assignStyles(style.base, visible() ? style.visible : style.hidden))
         }, [
             m(".modal-dialog", {
-                style: assignStyles(style.dialog, args.style.dialog),
+                style: prefixer.prefix(assignStyles(style.dialog, args.style.dialog)),
             }, [
                 m("a", {
                     onclick: hide,
@@ -67,6 +67,8 @@ module.exports.view = function(ctrl, args, extras) {
                 args.innerComponent ? args.innerComponent : ''
             ])
         ]),
-        m(".modal-overlay")
+        m(".modal-overlay", {
+            style: prefixer.prefix(assignStyles(style.overlay, args.style.overlay))
+        })
     ])
 }
