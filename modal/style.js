@@ -1,9 +1,4 @@
 'use strict';
-
-var Prefixer = require('inline-style-prefixer');
-// var customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'
-var prefixer = new Prefixer();
-
 var styles = {};
 
 styles.base = {
@@ -54,9 +49,5 @@ styles.overlay = {
 	zIndex: styles.base['zIndex'] - 1,
 	opacity: '0'
 }
-
-Object.keys(styles).forEach(function (key) {
-    styles[key] = prefixer.prefix(styles[key]);
-})
 
 module.exports = styles;

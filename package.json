@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/llambda/mithril-modal#readme",
   "dependencies": {
-    "lodash.assign": "^3.2.0",
+    "assign-styles": "^1.0.2",
+    "inline-style-prefixer": "^0.3.2",
     "mithril": "^0.2.0",
     "webpack": "^1.12.2"
   }
