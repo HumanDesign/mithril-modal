@@ -8,4 +8,4 @@
 3. npm i
 4. npm run watch
 5. hs
-6. open http://localhost:3000
+6. open http://localhost:3000/demo.html
