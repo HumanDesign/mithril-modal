@@ -48,8 +48,10 @@ styles.overlay = {
     top: '0',
     left: '0',
     zIndex: styles.base['zIndex'] - 1,
-    opacity: '0',
-    transition: 'all 0.3s'
+    opacity: '0.3',
+    transition: 'all 0.3s',
+    background: '',
+    backgroundColor: 'grey'
 }
 
 module.exports = styles;
