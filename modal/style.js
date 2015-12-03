@@ -6,14 +6,9 @@ styles.base = {
     top: '50%',
     left: '50%',
     minWidth: '320px',
+    zIndex: 1000,
     height: 'auto',
     transform: 'translateX(-50%) translateY(-50%)'
-}
-
-if (Number.MAX_SAFE_INTEGER) {
-    styles.base.zIndex = Number.MAX_SAFE_INTEGER;
-} else {
-    styles.base.zIndex = 9007199254740991;
 }
 
 styles.hidden = {
@@ -52,7 +47,8 @@ styles.overlay = {
     top: '0',
     left: '0',
     zIndex: styles.base['zIndex'] - 1,
-    opacity: '0'
+    opacity: '0',
+    transition: 'all 0.3s'
 }
 
 module.exports = styles;
