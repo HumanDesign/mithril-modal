@@ -12,12 +12,10 @@ var j2c = require('j2c');
 
 module.exports.show = function() {
     visible(true);
-    // m.redraw();
 }
 
 var hide = function() {
     visible(false);
-    // m.redraw()
 }
 module.exports.hide = hide;
 
@@ -39,19 +37,26 @@ module.exports.controller = function(args, extras) {
                     visible(false);
                 }
             }
-
             document.body.addEventListener('keyup', handleKey)
         }
     }
 }
+/**
+ * Returns a random number between min (inclusive) and max (exclusive)
+ */
+function getRandomArbitrary(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
 
 module.exports.view = function(ctrl, args, extras) {
-    // console.log('visible ' + visible());
-
     args = args || {}
     args.style = args.style || {}
 
-    var animation = animations['none'];
+    var animKeys = Object.keys(animations);
+    var randomAnim = animKeys[getRandomArbitrary(0, animKeys.length - 1)];
+
+    var animation = animations[randomAnim];
+
     if (args.animation) {
         if (animations[args.animation]) {
             animation = animations[args.animation];
@@ -60,10 +65,7 @@ module.exports.view = function(ctrl, args, extras) {
         }
     }
 
-    // console.log(prefixer.prefix(assignStyles(style.dialog, visible() ? animation.visible.dialog : animation.hidden.dialog, args.style.dialog)));
-
-
-    return m('div', [
+    return m('div', [ // mithril requires a component to have a root element; just an array won't work
         m("div" /* container */, {
             onclick: hide,
             config: ctrl.config,
