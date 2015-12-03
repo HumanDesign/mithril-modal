@@ -57,6 +57,31 @@ module.exports = {
             }
         }
     },
+    slideFromBottom: {
+        overlay: {
+            hidden: {
+            },
+            visible: {
+            }
+        },
+        container: {
+            hidden: {
+            },
+            visible: {
+            }
+        },
+        dialog: {
+            hidden: {
+                transform: 'translateY(20%)',
+                transition: 'all 0.3s',
+                opacity: 0
+            },
+            visible: {
+                transform: 'translateY(0)',
+                opacity: 1
+            }
+        }
+    },
     '3dFromLeft': {
         overlay: {
             hidden: {
