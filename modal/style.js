@@ -7,7 +7,7 @@ styles.base = {
     left: '50%',
     minWidth: '320px',
     height: 'auto',
-    zIndex: '10000',
+    zIndex: 10000,
     transform: 'translateX(-50%) translateY(-50%)'
 }
 

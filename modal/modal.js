@@ -18,14 +18,17 @@ module.exports.hide = hide;
 module.exports.controller = function(args, extras) {
     var ctrl = this;
     var origColor = style.base.color;
+    var handleKey;
 
     ctrl.onunload = function() {
-        document.body.removeEventListener('keyup', handleKey)
+        if (handleKey) {
+            document.body.removeEventListener('keyup', handleKey);
+        }
     }
 
     ctrl.config = function(element, isInitialized, context) {
         if (!isInitialized) {
-            var handleKey = function(e) {
+            handleKey = function(e) {
                 if (e.keyCode == 27) {
                     visible(false);
                     m.redraw()
@@ -42,7 +45,7 @@ module.exports.view = function(ctrl, args, extras) {
     args.style = args.style || {}
 
     return m('div', [
-        m(".modal", {
+        m("div", {
             class: [
                 visible() ? "modal-visible" : "",
                 args.class
