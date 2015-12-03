@@ -57,6 +57,37 @@ module.exports = {
             }
         }
     },
+    '3dFromLeft': {
+        overlay: {
+            hidden: {
+
+            },
+            visible: {
+
+            }
+        },
+        container: {
+            hidden: {
+            },
+            visible: {
+                perspective: '1300px'
+            }
+        },
+        dialog: {
+            hidden: {
+                'transform-style': 'preserve-3d',
+                transform: 'translateZ(100px) translateX(-30%) rotateY(90deg)',
+                'transform-origin': '0 100%',
+                opacity: 0,
+                transition: 'all 0.3s'
+            },
+            visible: {
+                transform: 'translateZ(0px) translateX(0%) rotateY(0deg)',
+                opacity: 1,
+                transition: 'all 0.3s'
+            }
+        }
+    },
     blur: {
         overlay: {
             hidden: {
