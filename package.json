@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/llambda/mithril-modal#readme",
   "dependencies": {
-    "assign-styles": "^1.0.2",
-    "inline-style-prefixer": "^0.3.2",
-    "mithril": "^0.2.0"
+    "assign-styles": "^2.0.0",
+    "inline-style-prefixer": "^0.5.3"
+  },
+  "peerDependencies": {
+      "mithril": "^0.2.0"
   },
   "devDependencies": {
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.9"
   }
 }
