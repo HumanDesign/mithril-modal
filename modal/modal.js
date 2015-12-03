@@ -64,13 +64,13 @@ module.exports.view = function(ctrl, args, extras) {
 
 
     return m('div', [
-        m("div", {
+        m("div" /* container */, {
             onclick: hide,
             config: ctrl.config,
-            style: j2c.inline(prefixer.prefix(assignStyles(style.base, visible() ? style.visible : style.hidden)))
+            style: j2c.inline(prefixer.prefix(assignStyles(style.base, visible() ? animation.container.visible : animation.container.hidden)))
         }, [
-            m('div', {
-                style: j2c.inline(prefixer.prefix(assignStyles(style.dialog, visible() ? animation.visible.dialog : animation.hidden.dialog, args.style.dialog)))
+            m('div' /* dialog */, {
+                style: j2c.inline(prefixer.prefix(assignStyles(style.dialog, visible() ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)))
             }, [
                 m("a", {
                     onclick: hide,
@@ -85,8 +85,8 @@ module.exports.view = function(ctrl, args, extras) {
                 args.innerComponent ? args.innerComponent : ''
             ])
         ]),
-        m(".modal-overlay", {
-            style: prefixer.prefix(assignStyles(style.overlay, args.style.overlay))
+        m(".modal-overlay", /* overlay */ {
+            style: prefixer.prefix(assignStyles(style.overlay, visible() ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay))
         })
     ])
 }
