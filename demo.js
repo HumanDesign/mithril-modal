@@ -14,7 +14,15 @@ var demo = {
                 // component to render inside the modal:
                 innerComponent: m.component(inner),
                 // animation:
-                // animation: 'blur',
+                animation: 'slideFromRight',
+                // animation: 'sideFall',
+                // animation: 'slideAndStick',
+                // animation: '3dFlipHorizontal',
+                // animation: '3dSign',
+                // animation: 'SuperScaled',
+                // animation: 'JustMe',
+                // animation: '3dFromBottom',
+                // animation: '3dSlit',
                 // styles can be overridden as well
                 style: {
                     dialog: {
