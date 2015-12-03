@@ -70,7 +70,7 @@ module.exports = {
                 filter: 'blur(3px)'
             },
             visible: {
-                filter: 'blur(3px)'
+                filter: ''
             }
         },
         dialog: {
