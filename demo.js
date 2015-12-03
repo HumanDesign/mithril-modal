@@ -14,7 +14,7 @@ var demo = {
                 // component to render inside the modal:
                 innerComponent: m.component(inner),
                 // animation:
-                animation: 'blur',
+                // animation: 'blur',
                 // styles can be overridden as well
                 style: {
                     dialog: {
