@@ -1,7 +1,28 @@
 module.exports = {
     'none': {
-        'hidden': {},
-        'visible': {}
+        overlay: {
+            hidden: {
+        },
+            visible: {
+
+            }
+        },
+        container: {
+            hidden: {
+
+            },
+            visible: {
+
+            }
+        },
+        dialog: {
+            hidden: {
+                opacity: 0
+            },
+            visible: {
+                opacity: 1
+            }
+        },
     },
     fadeAndScale: {
         overlay: {
