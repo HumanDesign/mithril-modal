@@ -3,34 +3,116 @@ module.exports = {
         'hidden': {},
         'visible': {}
     },
-    'fadeAndScale': {
-        'hidden': {
-            dialog: {
+    fadeAndScale: {
+        overlay: {
+            hidden: {
+
+            },
+            visible: {
+
+            }
+        },
+        container: {
+            hidden: {
+
+            },
+            visible: {
+
+            }
+        },
+        dialog: {
+            hidden: {
                 opacity: 0,
                 transform: 'scale(0.7)',
                 transition: 'all 0.3s'
-            }
-        },
-        'visible': {
-            dialog: {
+            },
+            visible: {
                 opacity: 1,
                 transform: 'scale(1)'
             }
-        }
+        },
     },
-    'slideFromRight': {
-        'hidden': {
-            dialog: {
+    slideFromRight: {
+        overlay: {
+            hidden: {
+            },
+            visible: {
+            }
+        },
+        container: {
+            hidden: {
+            },
+            visible: {
+            }
+        },
+        dialog: {
+            hidden: {
                 transform: 'translateX(20%)',
                 transition: 'all 0.3s',
                 opacity: 0
-            }
-        },
-        'visible': {
-            dialog: {
+            },
+            visible: {
                 transform: 'translateX(0)',
                 opacity: 1
             }
         }
+    },
+    blur: {
+        overlay: {
+            hidden: {
+            },
+            visible: {
+                background: 'rgba(180,46,32,0.5)'
+            }
+        },
+        container: {
+            hidden: {
+                filter: 'blur(3px)'
+            },
+            visible: {
+                filter: 'blur(3px)'
+            }
+        },
+        dialog: {
+            hidden: {
+                transform: 'translateY(-5%)',
+                opacity: 0
+            },
+            visible: {
+                transform: 'translateY(0)',
+                opacity: 1,
+                transition: 'all 0.3s'
+            }
+        }
     }
 }
+
+/*
+
+blur: {
+    overlay: {
+        hidden: {
+
+        },
+        visible: {
+
+        }
+    },
+    container: {
+        hidden: {
+
+        },
+        visible: {
+
+        }
+    },
+    dialog: {
+        hidden: {
+
+        },
+        visible: {
+
+        }
+    },
+
+    */
