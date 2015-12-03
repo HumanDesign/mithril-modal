@@ -40,6 +40,7 @@ styles.dialog = {
 }
 
 styles.overlay = {
+    cursor: 'not-allowed',
     position: 'fixed',
     width: '100%',
     height: '100%',
