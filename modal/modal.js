@@ -85,7 +85,7 @@ module.exports.view = function(ctrl, args, extras) {
                 args.innerComponent ? args.innerComponent : ''
             ])
         ]),
-        m(".modal-overlay", /* overlay */ {
+        m("div", /* overlay */ {
             style: prefixer.prefix(assignStyles(style.overlay, visible() ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay))
         })
     ])
