@@ -108,6 +108,33 @@ module.exports = {
             }
         }
     },
+    fall: {
+        overlay: {
+            hidden: {
+            },
+            visible: {
+            }
+        },
+        container: {
+            hidden: {
+            },
+            visible: {
+                perspective: '1300px'
+            }
+        },
+        dialog: {
+            hidden: {
+                'transform-style': 'preserve-3d',
+                transform: 'translateZ(600px) rotateX(20deg)',
+                opacity: 0
+            },
+            visible: {
+                transition: 'all 0.3s ease-in',
+                transform: 'translateZ(0px) rotateX(0deg)',
+                opacity: 1
+            }
+        }
+    },
     '3dFromLeft': {
         overlay: {
             hidden: {
