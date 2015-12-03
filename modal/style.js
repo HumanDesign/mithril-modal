@@ -43,7 +43,6 @@ styles.overlay = {
     position: 'fixed',
     width: '100%',
     height: '100%',
-    visibility: 'hidden',
     top: '0',
     left: '0',
     zIndex: styles.base['zIndex'] - 1,

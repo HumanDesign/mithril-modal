@@ -86,7 +86,7 @@ module.exports.view = function(ctrl, args, extras) {
             ])
         ]),
         m("div", /* overlay */ {
-            style: prefixer.prefix(assignStyles(style.overlay, visible() ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay))
+            style: j2c.inline(prefixer.prefix(assignStyles(style.overlay, visible() ? style.visible : style.hidden, visible() ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay)))
         })
     ])
 }
