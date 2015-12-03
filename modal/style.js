@@ -7,8 +7,13 @@ styles.base = {
     left: '50%',
     minWidth: '320px',
     height: 'auto',
-    zIndex: 10000,
     transform: 'translateX(-50%) translateY(-50%)'
+}
+
+if (Number.MAX_SAFE_INTEGER) {
+    styles.base.zIndex = Number.MAX_SAFE_INTEGER;
+} else {
+    styles.base.zIndex = 9007199254740991;
 }
 
 styles.hidden = {
