@@ -13,8 +13,8 @@ var demo = {
             m.component(modal, {
                 // component to render inside the modal:
                 innerComponent: m.component(inner),
-                // animation class:
-                class: 'modal-animation-8',
+                // animation:
+                animation: 'blur',
                 // styles can be overridden as well
                 style: {
                     dialog: {

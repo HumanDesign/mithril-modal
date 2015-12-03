@@ -204,7 +204,7 @@ module.exports = {
                 filter: 'blur(3px)'
             },
             visible: {
-                filter: ''
+                filter: 'blur(0px)'
             }
         },
         dialog: {
