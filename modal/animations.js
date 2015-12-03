@@ -60,9 +60,13 @@ module.exports = {
     blur: {
         overlay: {
             hidden: {
+                opacity: 0,
+                transition: 'all 0.3s'
             },
             visible: {
-                background: 'rgba(180,46,32,0.5)'
+                opacity: 1,
+                background: 'rgba(180,46,32,0.5)',
+                transition: 'all 0.3s'
             }
         },
         container: {
