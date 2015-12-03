@@ -10,6 +10,10 @@ var prefixer = new Prefixer();
 
 var j2c = require('j2c');
 
+function inline() {
+    return j2c.inline(prefixer.prefix(assignStyles.apply(null, arguments)));
+}
+
 module.exports.show = function() {
     visible(true);
 }
@@ -70,10 +74,10 @@ module.exports.view = function(ctrl, args, extras) {
         m("div" /* container */, {
             onclick: hide,
             config: ctrl.config,
-            style: j2c.inline(prefixer.prefix(assignStyles(style.base, visible() ? animation.container.visible : animation.container.hidden)))
+            style: inline(style.base, visible() ? animation.container.visible : animation.container.hidden)
         }, [
             m('div' /* dialog */, {
-                style: j2c.inline(prefixer.prefix(assignStyles(style.dialog, visible() ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)))
+                style: inline(style.dialog, visible() ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)
             }, [
                 m("a", {
                     onclick: hide,
@@ -83,13 +87,13 @@ module.exports.view = function(ctrl, args, extras) {
                     onmouseout: function() {
                         this.style.color = 'black'
                     },
-                    style: j2c.inline(prefixer.prefix(assignStyles(style.close, args.style.close)))
+                    style: inline(style.close, args.style.close)
                 }, args.close ? args.close : '×'),
                 args.innerComponent ? args.innerComponent : ''
             ])
         ]),
         m("div", /* overlay */ {
-            style: j2c.inline(prefixer.prefix(assignStyles(style.overlay, visible() ? style.visible : style.hidden, visible() ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay)))
+            style: inline(style.overlay, visible() ? style.visible : style.hidden, visible() ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay)
         })
     ])
 }
