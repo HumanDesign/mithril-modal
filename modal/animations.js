@@ -82,6 +82,32 @@ module.exports = {
             }
         }
     },
+    newspaper: {
+        overlay: {
+            hidden: {
+            },
+            visible: {
+                transition: 'all 0.5s',
+            }
+        },
+        container: {
+            hidden: {
+            },
+            visible: {
+            }
+        },
+        dialog: {
+            hidden: {
+                transform: 'scale(0) rotate(720deg)',
+                transition: 'all 0.5s',
+                opacity: 0
+            },
+            visible: {
+                transform: 'scale(1) rotate(0deg)',
+                opacity: 1
+            }
+        }
+    },
     '3dFromLeft': {
         overlay: {
             hidden: {
