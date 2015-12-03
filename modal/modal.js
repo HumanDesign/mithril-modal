@@ -54,8 +54,8 @@ function getRandomArbitrary(min, max) {
 }
 
 module.exports.view = function(ctrl, args, extras) {
-    args = args || {}
-    args.style = args.style || {}
+    args = args || {};
+    args.style = args.style || {};
 
     var animKeys = Object.keys(animations);
     var randomAnim = animKeys[getRandomArbitrary(0, animKeys.length - 1)];
@@ -66,7 +66,7 @@ module.exports.view = function(ctrl, args, extras) {
         if (animations[args.animation]) {
             animation = animations[args.animation];
         } else {
-            throw new Error(args.animation + ' unknown. Allowed animations are: ' + Object.keys(animations))
+            throw new Error(args.animation + ' unknown. Allowed animations are: ' + Object.keys(animations).join(', '));
         }
     }
 
