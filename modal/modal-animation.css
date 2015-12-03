@@ -1,9 +1,3 @@
-.modal-overlay {
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
 /* Effect 1: Fade in and scale up */
 .modal-animation-1 .modal-dialog {
 	-webkit-transform: scale(0.7);
@@ -99,10 +93,10 @@
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	-webkit-transform: translateZ(600px) rotateX(20deg); 
-	-moz-transform: translateZ(600px) rotateX(20deg); 
-	-ms-transform: translateZ(600px) rotateX(20deg); 
-	transform: translateZ(600px) rotateX(20deg); 
+	-webkit-transform: translateZ(600px) rotateX(20deg);
+	-moz-transform: translateZ(600px) rotateX(20deg);
+	-ms-transform: translateZ(600px) rotateX(20deg);
+	transform: translateZ(600px) rotateX(20deg);
 	opacity: 0;
 }
 
@@ -113,7 +107,7 @@
 	-webkit-transform: translateZ(0px) rotateX(0deg);
 	-moz-transform: translateZ(0px) rotateX(0deg);
 	-ms-transform: translateZ(0px) rotateX(0deg);
-	transform: translateZ(0px) rotateX(0deg); 
+	transform: translateZ(0px) rotateX(0deg);
 	opacity: 1;
 }
 
@@ -128,10 +122,10 @@
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	-webkit-transform: translate(30%) translateZ(600px) rotate(10deg); 
+	-webkit-transform: translate(30%) translateZ(600px) rotate(10deg);
 	-moz-transform: translate(30%) translateZ(600px) rotate(10deg);
 	-ms-transform: translate(30%) translateZ(600px) rotate(10deg);
-	transform: translate(30%) translateZ(600px) rotate(10deg); 
+	transform: translate(30%) translateZ(600px) rotate(10deg);
 	opacity: 0;
 }
 
@@ -299,7 +293,7 @@
 
 .modal-visible.modal-animation-12 ~ .modal-overlay {
 	background: #e74c3c;
-} 
+}
 
 .modal-animation-12 .modal-dialog h3,
 .modal-animation-12 .modal-dialog {

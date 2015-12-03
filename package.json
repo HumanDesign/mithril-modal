@@ -20,10 +20,11 @@
   "homepage": "https://github.com/llambda/mithril-modal#readme",
   "dependencies": {
     "assign-styles": "^2.0.0",
-    "inline-style-prefixer": "^0.5.3"
+    "inline-style-prefixer": "^0.5.3",
+    "j2c": "^0.8.0-pre.4"
   },
   "peerDependencies": {
-      "mithril": "^0.2.0"
+    "mithril": "^0.2.0"
   },
   "devDependencies": {
     "webpack": "^1.12.9"

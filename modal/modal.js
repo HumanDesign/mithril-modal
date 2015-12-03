@@ -1,17 +1,23 @@
 var m = require('mithril');
 var visible = m.prop(false);
 var style = require('./style');
+var animations = require('./animations');
+
 var assignStyles = require('assign-styles');
 var Prefixer = require('inline-style-prefixer');
 // var customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'
 var prefixer = new Prefixer();
 
+var j2c = require('j2c');
+
 module.exports.show = function() {
     visible(true);
+    // m.redraw();
 }
 
 var hide = function() {
     visible(false);
+    // m.redraw()
 }
 module.exports.hide = hide;
 
@@ -31,7 +37,6 @@ module.exports.controller = function(args, extras) {
             handleKey = function(e) {
                 if (e.keyCode == 27) {
                     visible(false);
-                    m.redraw()
                 }
             }
 
@@ -41,21 +46,31 @@ module.exports.controller = function(args, extras) {
 }
 
 module.exports.view = function(ctrl, args, extras) {
+    // console.log('visible ' + visible());
+
     args = args || {}
     args.style = args.style || {}
 
+    var animation = animations['none'];
+    if (args.animation) {
+        if (animations[args.animation]) {
+            animation = animations[args.animation];
+        } else {
+            throw new Error(args.animation + ' unknown. Allowed animations are: ' + Object.keys(animations))
+        }
+    }
+
+    // console.log(prefixer.prefix(assignStyles(style.dialog, visible() ? animation.visible.dialog : animation.hidden.dialog, args.style.dialog)));
+
+
     return m('div', [
         m("div", {
-            class: [
-                visible() ? "modal-visible" : "",
-                args.class
-            ].join(" "),
             onclick: hide,
             config: ctrl.config,
-            style: prefixer.prefix(assignStyles(style.base, visible() ? style.visible : style.hidden))
+            style: j2c.inline(prefixer.prefix(assignStyles(style.base, visible() ? style.visible : style.hidden)))
         }, [
-            m(".modal-dialog", {
-                style: prefixer.prefix(assignStyles(style.dialog, args.style.dialog)),
+            m('div', {
+                style: j2c.inline(prefixer.prefix(assignStyles(style.dialog, visible() ? animation.visible.dialog : animation.hidden.dialog, args.style.dialog)))
             }, [
                 m("a", {
                     onclick: hide,
@@ -65,7 +80,7 @@ module.exports.view = function(ctrl, args, extras) {
                     onmouseout: function() {
                         this.style.color = 'black'
                     },
-                    style: prefixer.prefix(assignStyles(style.close, args.style.close))
+                    style: j2c.inline(prefixer.prefix(assignStyles(style.close, args.style.close)))
                 }, args.close ? args.close : '×'),
                 args.innerComponent ? args.innerComponent : ''
             ])
