@@ -33,8 +33,9 @@ module.exports.controller = function(args, extras) {
     ctrl.config = function(element, isInitialized, context) {
         if (!isInitialized) {
             handleKey = function(e) {
-                if (e.keyCode == 27) {
+                if (e.keyCode == 27) { // escape key
                     visible(false);
+                    m.redraw();
                 }
             }
             document.body.addEventListener('keyup', handleKey)
