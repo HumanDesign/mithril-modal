@@ -8,7 +8,8 @@ styles.base = {
     minWidth: '320px',
     zIndex: 1000,
     height: 'auto',
-    transform: 'translateX(-50%) translateY(-50%)'
+    transform: 'translateX(-50%) translateY(-50%)',
+    filter: ''
 }
 
 styles.hidden = {

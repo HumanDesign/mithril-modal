@@ -71,10 +71,10 @@ module.exports.view = function(ctrl, args, extras) {
     }
 
     return m('div', [ // mithril requires a component to have a root element; just an array won't work
-        m("div" /* container */, {
+        m("div" /* base */, {
             onclick: hide,
             config: ctrl.config,
-            style: inline(style.base, visible() ? animation.container.visible : animation.container.hidden)
+            style: inline(style.base, visible() ? animation.base.visible : animation.base.hidden)
         }, [
             m('div' /* dialog */, {
                 style: inline(style.dialog, visible() ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)

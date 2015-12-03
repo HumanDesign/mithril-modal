@@ -7,7 +7,7 @@ module.exports = {
 
             }
         },
-        container: {
+        base: {
             hidden: {
 
             },
@@ -33,7 +33,7 @@ module.exports = {
 
             }
         },
-        container: {
+        base: {
             hidden: {
 
             },
@@ -60,7 +60,7 @@ module.exports = {
             visible: {
             }
         },
-        container: {
+        base: {
             hidden: {
             },
             visible: {
@@ -73,6 +73,7 @@ module.exports = {
                 opacity: 0
             },
             visible: {
+                filter: '',
                 transform: 'translateX(0)',
                 opacity: 1
             }
@@ -85,7 +86,7 @@ module.exports = {
             visible: {
             }
         },
-        container: {
+        base: {
             hidden: {
             },
             visible: {
@@ -98,6 +99,7 @@ module.exports = {
                 opacity: 0
             },
             visible: {
+                filter: '',
                 transform: 'translateY(0)',
                 opacity: 1
             }
@@ -111,10 +113,11 @@ module.exports = {
                 transition: 'all 0.5s',
             }
         },
-        container: {
+        base: {
             hidden: {
             },
             visible: {
+                filter: ''
             }
         },
         dialog: {
@@ -136,10 +139,11 @@ module.exports = {
             visible: {
             }
         },
-        container: {
+        base: {
             hidden: {
             },
             visible: {
+                filter: '',
                 perspective: '1300px'
             }
         },
@@ -165,10 +169,11 @@ module.exports = {
 
             }
         },
-        container: {
+        base: {
             hidden: {
             },
             visible: {
+                filter: '',
                 perspective: '1300px'
             }
         },
@@ -199,12 +204,12 @@ module.exports = {
                 transition: 'all 0.3s'
             }
         },
-        container: {
+        base: {
             hidden: {
                 filter: 'blur(3px)'
             },
             visible: {
-                filter: 'blur(0px)'
+                filter: ''
             }
         },
         dialog: {
@@ -232,7 +237,7 @@ blur: {
 
         }
     },
-    container: {
+    base: {
         hidden: {
 
         },
