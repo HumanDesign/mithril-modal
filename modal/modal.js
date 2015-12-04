@@ -88,7 +88,7 @@ module.exports.view = function(ctrl, args, extras) {
                     },
                     style: inline(style.close, args.style.close)
                 }, args.close ? args.close : '×'),
-                args.innerComponent ? args.innerComponent : ''
+                extras
             ])
         ]),
         m("div", /* overlay */ {
