@@ -11,8 +11,6 @@ var demo = {
                 }
             }, "Click to show modal"),
             m.component(modal, {
-                // component to render inside the modal:
-                innerComponent: m.component(inner),
                 // animation:
                 // animation: 'slideFromRight',
                 // animation: 'sideFall',
@@ -34,14 +32,13 @@ var demo = {
                 close: '✘',
                 // close: '×',
                 // close: 'x'
-            })
+            }, m.component(inner))
         ]
     }
 }
 
 // inner component; to be rendered in the modal
 var inner = {
-    controller: function() {},
     view: function() {
         return m('div',
             m("h1", "Hello world"))
