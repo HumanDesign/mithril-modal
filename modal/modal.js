@@ -73,7 +73,7 @@ module.exports.view = function(ctrl, args, extras) {
         m("div" /* base */, {
             onclick: hide,
             config: ctrl.config,
-            style: inline(style.base, visible() ? animation.base.visible : animation.base.hidden)
+            style: inline(style.base, visible() ? style.visible : style.hidden, visible() ? animation.base.visible : animation.base.hidden)
         }, [
             m('div' /* dialog */, {
                 style: inline(style.dialog, visible() ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)
