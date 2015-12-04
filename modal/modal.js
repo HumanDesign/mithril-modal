@@ -16,11 +16,11 @@ function inline() {
 
 /** Load keyframes */
 
-var body = document.getElementsByTagName('body')[0];
+var head = document.getElementsByTagName('head')[0];
 var styleEl = document.createElement('style');
 var keyframesStyle = j2c.sheet(keyframes);
 styleEl.innerHTML = keyframesStyle;
-body.appendChild(styleEl);
+head.appendChild(styleEl);
 
 // animations['3dSlit'].dialog.visible.animation = 'slit .7s forwards ease-out'
 animations['3dSlit'].dialog.visible.animation = keyframesStyle.slit + ' .7s forwards ease-out'
