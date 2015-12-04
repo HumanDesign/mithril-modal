@@ -11,20 +11,27 @@ var demo = {
                 }
             }, "Click to show modal"),
             m.component(modal, {
-                // animation:
+                // animation: 'none',
+                // animation: 'fadeAndScale',
                 // animation: 'slideFromRight',
+                // animation: 'slideFromBottom',
+                // animation: 'newspaper',
+                // animation: 'fall',
                 // animation: 'sideFall',
                 // animation: 'slideAndStick',
                 // animation: '3dFlipHorizontal',
+                // animation: '3dFlipVertical',
                 // animation: '3dSign',
                 // animation: 'SuperScaled',
                 // animation: 'JustMe',
                 // animation: '3dFromBottom',
-                animation: '3dSlit',
+                // animation: '3dFromLeft',
+                // animation: '3dSlit',
+                animation: 'blur',
                 // styles can be overridden as well
                 style: {
                     dialog: {
-                        backgroundColor: '#aaffee',
+                        backgroundColor: '#aaf3ee',
                         width: '700px'
                     }
                 },
