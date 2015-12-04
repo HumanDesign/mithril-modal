@@ -2,7 +2,6 @@ var m = require('mithril');
 var visible = m.prop(false);
 var style = require('./style');
 var animations = require('./animations');
-var keyframes = require('./keyframes');
 var assignStyles = require('assign-styles');
 var Prefixer = require('inline-style-prefixer');
 // var customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'
@@ -13,17 +12,6 @@ var j2c = require('j2c');
 function inline() {
     return j2c.inline(prefixer.prefix(assignStyles.apply(null, arguments)));
 }
-
-/** Load keyframes */
-
-var head = document.getElementsByTagName('head')[0];
-var styleEl = document.createElement('style');
-var keyframesStyle = j2c.sheet(keyframes);
-styleEl.innerHTML = keyframesStyle;
-head.appendChild(styleEl);
-
-// animations['3dSlit'].dialog.visible.animation = 'slit .7s forwards ease-out'
-animations['3dSlit'].dialog.visible.animation = keyframesStyle.slit + ' .7s forwards ease-out'
 
 module.exports.show = function() {
     visible(true);

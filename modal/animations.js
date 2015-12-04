@@ -1,4 +1,6 @@
-module.exports = {
+var keyframes = require('./keyframes');
+
+var animations = {
     'none': {
         overlay: {
             hidden: {
@@ -490,3 +492,7 @@ module.exports = {
         }
     }
 }
+
+animations['3dSlit'].dialog.visible.animation = keyframes.slit + ' .7s forwards ease-out'
+
+module.exports = animations;

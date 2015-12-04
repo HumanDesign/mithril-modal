@@ -1,4 +1,5 @@
-module.exports = {
+var j2c = require('j2c');
+var keyframes = {
     '@keyframes slit': {
         '50%': {
             transform: 'translateZ(-250px) rotateY(89deg)',
@@ -11,3 +12,11 @@ module.exports = {
         }
     }
 }
+
+var head = document.getElementsByTagName('head')[0];
+var styleEl = document.createElement('style');
+var keyframesStyle = j2c.sheet(keyframes);
+styleEl.innerHTML = keyframesStyle;
+head.appendChild(styleEl);
+
+module.exports = keyframesStyle;
