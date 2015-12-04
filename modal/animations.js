@@ -356,17 +356,6 @@ var animations = {
         }
     },
     '3dSlit': {
-        // '@keyframes slit': {
-        //     '50%': {
-        //         transform: 'translateZ(-250px) rotateY(89deg)',
-        //         opacity: 1,
-        //         'animation-timing-function': 'ease-in'
-        //     },
-        //     '100%': {
-        //         transform: 'translateZ(0) rotateY(0deg)',
-        //         opacity: 1
-        //     }
-        // },
         overlay: {
             hidden: {
 
@@ -390,7 +379,7 @@ var animations = {
                 animation: ''
             },
             visible: {
-                animation: 'slit .7s forwards ease-out',
+                animation: keyframes.slit + ' .7s forwards ease-out',
             }
         }
     },
@@ -492,7 +481,5 @@ var animations = {
         }
     }
 }
-
-animations['3dSlit'].dialog.visible.animation = keyframes.slit + ' .7s forwards ease-out'
 
 module.exports = animations;
