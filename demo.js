@@ -26,8 +26,8 @@ var demo = {
                 // animation: 'JustMe',
                 // animation: '3dFromBottom',
                 // animation: '3dFromLeft',
-                // animation: '3dSlit',
-                animation: 'blur',
+                animation: '3dSlit',
+                // animation: 'blur',
                 // styles can be overridden as well
                 style: {
                     dialog: {
