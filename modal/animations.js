@@ -480,6 +480,6 @@ var animations = {
             }
         }
     }
-}
+};
 
 module.exports = animations;
