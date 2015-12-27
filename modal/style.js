@@ -10,16 +10,16 @@ styles.base = {
     height: 'auto',
     transform: 'translateX(-50%) translateY(-50%)',
     filter: ''
-}
+};
 
 styles.hidden = {
     visibility: 'hidden'
-}
+};
 
 styles.visible = {
     visibility: 'visible',
     backfaceVisibility: 'visible'
-}
+};
 
 styles.close = {
     cursor: 'pointer',
@@ -30,7 +30,7 @@ styles.close = {
     position: 'absolute',
     textDecoration: 'none',
     top: '5px'
-}
+};
 
 styles.dialog = {
     position: 'relative',
@@ -38,7 +38,7 @@ styles.dialog = {
     minHeight: '400px',
     padding: '10px',
     width: '400px'
-}
+};
 
 styles.overlay = {
     cursor: 'not-allowed',
@@ -47,11 +47,11 @@ styles.overlay = {
     height: '100%',
     top: '0',
     left: '0',
-    zIndex: styles.base['zIndex'] - 1,
+    zIndex: styles.base.zIndex - 1,
     opacity: '0.3',
     transition: 'all 0.3s',
     background: '',
     backgroundColor: 'grey'
-}
+};
 
 module.exports = styles;
