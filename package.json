@@ -20,7 +20,7 @@
   "homepage": "https://github.com/llambda/mithril-modal#readme",
   "dependencies": {
     "assign-styles": "^2.0.0",
-    "inline-style-prefixer": "^0.5.4",
+    "inline-style-prefixer": "^0.6.2",
     "j2c": "^0.8.3"
   },
   "peerDependencies": {
