@@ -3,7 +3,11 @@
 * Uses the new component system in [Mithril](http://mithril.js.org/) 0.2.0
 * No CSS. All styling is inline via [j2c](http://j2c.py.gy/). Keyframe animations are added to the document head, with a uniquely generated name, via j2c.
 
-## Setup
+## Usage
+
+```npm i mithril-modal```
+
+## Demo / dev setup
 
 1. npm i -g http-server
 1. git clone https://github.com/llambda/mithril-modal.git
