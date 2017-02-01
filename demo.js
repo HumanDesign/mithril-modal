@@ -3,14 +3,14 @@ var modal = require('./modal/modal.js');
 
 // top level
 var demo = {
-    view: function(ctrl) {
+    view: function(vnode) {
         return [
             m("button[type=button]", {
                 onclick: function() {
                     modal.show();
                 }
             }, "Click to show modal"),
-            m.component(modal, {
+            m(modal, {
                 // animation: 'none',
                 // animation: 'fadeAndScale',
                 // animation: 'slideFromRight',
@@ -39,7 +39,7 @@ var demo = {
                 close: '✘',
                 // close: '×',
                 // close: 'x'
-            }, m.component(inner))
+            }, m(inner))
         ]
     }
 }
@@ -52,4 +52,4 @@ var inner = {
     }
 }
 
-m.module(document.getElementById('demo'), demo)
+m.mount(document.getElementById('demo'), demo)
