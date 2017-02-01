@@ -24,7 +24,7 @@
     "j2c": "^0.11.2"
   },
   "peerDependencies": {
-    "mithril": "^0.2.0"
+    "mithril": "^1.0.0"
   },
   "devDependencies": {
     "webpack": "^1.13.2"

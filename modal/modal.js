@@ -52,31 +52,31 @@ function getRandomArbitrary(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
-module.exports.view = function(ctrl, args, extras) {
-    args = args || {};
-    args.style = args.style || {};
+module.exports.view = function(vnode, extras) {
+    vnode.attrs = vnode.attrs || {};
+    vnode.attrs.style = vnode.attrs.style || {};
 
     var animKeys = Object.keys(animations);
     var randomAnim = animKeys[getRandomArbitrary(0, animKeys.length - 1)];
 
     var animation = animations[randomAnim];
 
-    if (args.animation) {
-        if (animations[args.animation]) {
-            animation = animations[args.animation];
+    if (vnode.attrs.animation) {
+        if (animations[vnode.attrs.animation]) {
+            animation = animations[vnode.attrs.animation];
         } else {
-            throw new Error(args.animation + ' unknown. Allowed animations are: ' + Object.keys(animations).join(', '));
+            throw new Error(vnode.attrs.animation + ' unknown. Allowed animations are: ' + Object.keys(animations).join(', '));
         }
     }
 
     return m('div', [ // mithril requires a component to have a root element; just an array won't work
         m("div" /* base */, {
             onclick: hide,
-            config: ctrl.config,
+            config: vnode.state.config,
             style: inline(style.base, visible ? style.visible : style.hidden, visible ? animation.base.visible : animation.base.hidden)
         }, [
             m('div' /* dialog */, {
-                style: inline(style.dialog, visible ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)
+                style: inline(style.dialog, visible ? animation.dialog.visible : animation.dialog.hidden, vnode.attrs.style.dialog)
             }, [
                 m("a", {
                     onclick: hide,
@@ -86,13 +86,13 @@ module.exports.view = function(ctrl, args, extras) {
                     onmouseout: function() {
                         this.style.color = 'black'
                     },
-                    style: inline(style.close, args.style.close)
-                }, args.close ? args.close : '×'),
+                    style: inline(style.close, vnode.attrs.style.close)
+                }, vnode.attrs.close ? vnode.attrs.close : '×'),
                 extras
             ])
         ]),
         m("div", /* overlay */ {
-            style: inline(style.overlay, visible ? style.visible : style.hidden, visible ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay)
+            style: inline(style.overlay, visible ? style.visible : style.hidden, visible ? animation.overlay.visible : animation.overlay.hidden, vnode.attrs.style.overlay)
         })
     ])
 }
