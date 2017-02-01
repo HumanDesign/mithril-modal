@@ -1,5 +1,5 @@
 var m = require('mithril');
-var visible = m.prop(false);
+var visible = false;
 var style = require('./style');
 var animations = require('./animations');
 var assignStyles = require('assign-styles');
@@ -14,11 +14,11 @@ function inline() {
 }
 
 module.exports.show = function() {
-    visible(true);
+    visible = true;
 }
 
 var hide = function() {
-    visible(false);
+    visible = false;
 }
 module.exports.hide = hide;
 
@@ -73,10 +73,10 @@ module.exports.view = function(ctrl, args, extras) {
         m("div" /* base */, {
             onclick: hide,
             config: ctrl.config,
-            style: inline(style.base, visible() ? style.visible : style.hidden, visible() ? animation.base.visible : animation.base.hidden)
+            style: inline(style.base, visible ? style.visible : style.hidden, visible ? animation.base.visible : animation.base.hidden)
         }, [
             m('div' /* dialog */, {
-                style: inline(style.dialog, visible() ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)
+                style: inline(style.dialog, visible ? animation.dialog.visible : animation.dialog.hidden, args.style.dialog)
             }, [
                 m("a", {
                     onclick: hide,
@@ -92,7 +92,7 @@ module.exports.view = function(ctrl, args, extras) {
             ])
         ]),
         m("div", /* overlay */ {
-            style: inline(style.overlay, visible() ? style.visible : style.hidden, visible() ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay)
+            style: inline(style.overlay, visible ? style.visible : style.hidden, visible ? animation.overlay.visible : animation.overlay.hidden, args.style.overlay)
         })
     ])
 }
