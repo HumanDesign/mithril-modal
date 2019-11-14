@@ -1,9 +1,16 @@
-var m = require('mithril');
-var modal = require('./modal/modal.js');
+const m = require('mithril');
+const modal = require('./modal/modal.js');
 
-// top level
-var demo = {
-    view: function(vnode) {
+// inner component; to be rendered in the modal
+const inner = m({
+    view: () => {
+        return m('div',
+            m("h1", "Hello world"))
+    }
+});
+
+const demo = {
+    view: () => {
         return [
             m("button[type=button]", {
                 onclick: function() {
@@ -39,17 +46,12 @@ var demo = {
                 close: '✘',
                 // close: '×',
                 // close: 'x'
-            }, m(inner))
+
+                // inner dialog component
+                inner: inner
+            })
         ]
     }
 }
 
-// inner component; to be rendered in the modal
-var inner = {
-    view: function() {
-        return m('div',
-            m("h1", "Hello world"))
-    }
-}
-
-m.mount(document.getElementById('demo'), demo)
+m.mount(document.getElementById('demo'), demo);
