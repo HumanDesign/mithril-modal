@@ -13,9 +13,7 @@ const demo = {
     view: () => {
         return [
             m("button[type=button]", {
-                onclick: function() {
-                    modal.show();
-                }
+                onclick: () => modal.show()
             }, "Click to show modal"),
             m(modal, {
                 // animation: 'none',
