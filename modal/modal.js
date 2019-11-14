@@ -2,13 +2,12 @@ const m = require('mithril');
 const style = require('./style');
 const animations = require('./animations');
 const assignStyles = require('assign-styles');
-const Prefixer = require('inline-style-prefixer');
+const prefix = require('inline-style-prefixer').prefix;
 // const customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'
-const prefixer = new Prefixer();
 const j2c = require('j2c');
 
 function inline() {
-    return j2c.inline(prefixer.prefix(assignStyles.apply(null, arguments)));
+    return j2c.inline(prefix(assignStyles.apply(null, arguments)));
 }
 
 /**
