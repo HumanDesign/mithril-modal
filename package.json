@@ -1,0 +1,34 @@
+{
+  "name": "mithril-modal",
+  "version": "2.0.0",
+  "description": "modal dialog for mithril.js",
+  "main": "modal/modal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llambda/mithril-modal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llambda/mithril-modal/issues"
+  },
+  "homepage": "https://github.com/llambda/mithril-modal#readme",
+  "dependencies": {
+    "assign-styles": "^2.0.0",
+    "inline-style-prefixer": "^5.1.0",
+    "j2c": "^0.11.3"
+  },
+  "peerDependencies": {
+    "mithril": "^2.0.0"
+  },
+  "devDependencies": {
+    "mithril": "^2.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
